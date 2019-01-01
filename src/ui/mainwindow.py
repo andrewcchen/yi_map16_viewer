@@ -1,0 +1,102 @@
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'ui/mainwindow.ui',
+# licensing of 'ui/mainwindow.ui' applies.
+#
+# Created: Tue Jan  1 11:54:35 2019
+#      by: pyside2-uic  running on PySide2 5.12.0
+#
+# WARNING! All changes made in this file will be lost!
+
+from PySide2 import QtCore, QtGui, QtWidgets
+
+class Ui_MainWindow(object):
+    def setupUi(self, MainWindow):
+        MainWindow.setObjectName("MainWindow")
+        MainWindow.resize(800, 600)
+        self.centralwidget = QtWidgets.QWidget(MainWindow)
+        self.centralwidget.setObjectName("centralwidget")
+        self.horizontalLayout = QtWidgets.QHBoxLayout(self.centralwidget)
+        self.horizontalLayout.setObjectName("horizontalLayout")
+        self.tileScrollArea = QtWidgets.QScrollArea(self.centralwidget)
+        self.tileScrollArea.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOn)
+        self.tileScrollArea.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
+        self.tileScrollArea.setSizeAdjustPolicy(QtWidgets.QAbstractScrollArea.AdjustIgnored)
+        self.tileScrollArea.setWidgetResizable(True)
+        self.tileScrollArea.setAlignment(QtCore.Qt.AlignJustify|QtCore.Qt.AlignTop)
+        self.tileScrollArea.setObjectName("tileScrollArea")
+        self.tileDisplay = TileDisplay()
+        self.tileDisplay.setGeometry(QtCore.QRect(0, 0, 627, 531))
+        self.tileDisplay.setObjectName("tileDisplay")
+        self.tileScrollArea.setWidget(self.tileDisplay)
+        self.horizontalLayout.addWidget(self.tileScrollArea)
+        self.sideBar = QtWidgets.QWidget(self.centralwidget)
+        self.sideBar.setEnabled(True)
+        self.sideBar.setMinimumSize(QtCore.QSize(0, 0))
+        self.sideBar.setObjectName("sideBar")
+        self.verticalLayout = QtWidgets.QVBoxLayout(self.sideBar)
+        self.verticalLayout.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout.setObjectName("verticalLayout")
+        self.pageLabel = QtWidgets.QLabel(self.sideBar)
+        self.pageLabel.setObjectName("pageLabel")
+        self.verticalLayout.addWidget(self.pageLabel)
+        self.pageSelect = QtWidgets.QSpinBox(self.sideBar)
+        self.pageSelect.setMaximum(166)
+        self.pageSelect.setDisplayIntegerBase(16)
+        self.pageSelect.setObjectName("pageSelect")
+        self.verticalLayout.addWidget(self.pageSelect)
+        self.tilesetLabel = QtWidgets.QLabel(self.sideBar)
+        self.tilesetLabel.setObjectName("tilesetLabel")
+        self.verticalLayout.addWidget(self.tilesetLabel)
+        self.tilesetSelect = QtWidgets.QComboBox(self.sideBar)
+        self.tilesetSelect.setObjectName("tilesetSelect")
+        self.verticalLayout.addWidget(self.tilesetSelect)
+        self.paletteLabel = QtWidgets.QLabel(self.sideBar)
+        self.paletteLabel.setObjectName("paletteLabel")
+        self.verticalLayout.addWidget(self.paletteLabel)
+        self.paletteSelect = QtWidgets.QComboBox(self.sideBar)
+        self.paletteSelect.setObjectName("paletteSelect")
+        self.verticalLayout.addWidget(self.paletteSelect)
+        self.scaleLabel = QtWidgets.QLabel(self.sideBar)
+        self.scaleLabel.setObjectName("scaleLabel")
+        self.verticalLayout.addWidget(self.scaleLabel)
+        self.scaleSelect = QtWidgets.QSpinBox(self.sideBar)
+        self.scaleSelect.setMinimum(1)
+        self.scaleSelect.setMaximum(10)
+        self.scaleSelect.setProperty("value", 4)
+        self.scaleSelect.setObjectName("scaleSelect")
+        self.verticalLayout.addWidget(self.scaleSelect)
+        spacerItem = QtWidgets.QSpacerItem(0, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
+        self.verticalLayout.addItem(spacerItem)
+        self.tileLabel = QtWidgets.QLabel(self.sideBar)
+        self.tileLabel.setObjectName("tileLabel")
+        self.verticalLayout.addWidget(self.tileLabel)
+        self.tileText = QtWidgets.QLabel(self.sideBar)
+        self.tileText.setText("")
+        self.tileText.setObjectName("tileText")
+        self.verticalLayout.addWidget(self.tileText)
+        spacerItem1 = QtWidgets.QSpacerItem(0, 0, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.verticalLayout.addItem(spacerItem1)
+        self.horizontalLayout.addWidget(self.sideBar)
+        MainWindow.setCentralWidget(self.centralwidget)
+        self.menubar = QtWidgets.QMenuBar(MainWindow)
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 30))
+        self.menubar.setObjectName("menubar")
+        MainWindow.setMenuBar(self.menubar)
+        self.statusbar = QtWidgets.QStatusBar(MainWindow)
+        self.statusbar.setObjectName("statusbar")
+        MainWindow.setStatusBar(self.statusbar)
+
+        self.retranslateUi(MainWindow)
+        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
+    def retranslateUi(self, MainWindow):
+        MainWindow.setWindowTitle(QtWidgets.QApplication.translate("MainWindow", "MainWindow", None, -1))
+        self.pageLabel.setText(QtWidgets.QApplication.translate("MainWindow", "Map16 Page:", None, -1))
+        self.pageSelect.setPrefix(QtWidgets.QApplication.translate("MainWindow", "0x", None, -1))
+        self.tilesetLabel.setText(QtWidgets.QApplication.translate("MainWindow", "Tileset:", None, -1))
+        self.paletteLabel.setText(QtWidgets.QApplication.translate("MainWindow", "Palette:", None, -1))
+        self.scaleLabel.setText(QtWidgets.QApplication.translate("MainWindow", "Scale", None, -1))
+        self.tileLabel.setText(QtWidgets.QApplication.translate("MainWindow", "Tile:", None, -1))
+
+from tile_display import TileDisplay
